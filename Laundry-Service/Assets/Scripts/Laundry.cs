@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Laundry : MonoBehaviour
+public class Laundry : Draggable
 {
+
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -23,9 +24,23 @@ public class Laundry : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Laundry-Machine" && LaundryMachine._tagChanger == 1)
+       
+        if (collision.gameObject.name == "Laundry-Machine" )
         {
-            transform.gameObject.tag = "CleanWet";
+         
+            transform.gameObject.tag = "DirtyUnfoldedInMachine";
+            this.IsDragging = false;
+            
+            if(LaundryMachine.isFull){
+            //Wait inside of machine
+            float time = 0;
+            while(time < 5){
+            time += Time.deltaTime;
+            }
+            }
+  
+
+          // transform.gameObject.tag = "CleanWet";
         }
         
     }

@@ -10,6 +10,8 @@ public class DragController : MonoBehaviour
     private Vector2 _screenPosition;
     private Vector3 _worldPosition;
     private Draggable _lastDragged;
+    public int deneme;
+
     private void Awake()
     {
         DragController[] controllers = FindObjectsOfType<DragController>();
@@ -17,6 +19,7 @@ public class DragController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        deneme = 0;
     }
 
     void Update()
@@ -26,10 +29,12 @@ public class DragController : MonoBehaviour
             Drop();
             return;
         }
-        if (Input.GetMouseButton(0))
+        //buraya isDraggable değil ise girilmemesi lazım.
+        if (Input.GetMouseButton(0) && deneme == 0)
         {
             Vector3 mousePos = Input.mousePosition;
             _screenPosition = new Vector2(mousePos.x, mousePos.y);
+      
         }
         else if (Input.touchCount > 0)
         {

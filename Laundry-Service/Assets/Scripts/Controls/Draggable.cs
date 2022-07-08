@@ -9,7 +9,7 @@ public class Draggable : MonoBehaviour
     public Vector3 LastPosition;
 
     private Collider2D _collider;
-    private DragController _dragController;
+    public DragController _dragController;
 
     private float _movementTime = 15f;
     private System.Nullable<Vector3> _movementDestination;
@@ -19,8 +19,12 @@ public class Draggable : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         _dragController = FindObjectOfType<DragController>();
     }
+
     private void FixedUpdate()
     {
+        if(this.transform.gameObject.tag == "DirtyUnfoldedInMachine"){
+            this._dragController.deneme = 1;
+        }
         if (_movementDestination.HasValue)
         {
             if (IsDragging)

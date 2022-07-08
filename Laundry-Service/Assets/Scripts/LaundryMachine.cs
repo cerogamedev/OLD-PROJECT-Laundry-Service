@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class LaundryMachine : MonoBehaviour
 {
+
     public int _fullLimit;
     public int _addInMachine;
+    public static bool isFull;
 
     public static int _tagChanger;
 
@@ -22,13 +25,15 @@ public class LaundryMachine : MonoBehaviour
     {
         TimerAndSystem();
     }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "DirtyUnfolded" && _addInMachine<_fullLimit)
+        if (collision.gameObject.tag == "DirtyUnfoldedInMachine" && _addInMachine<_fullLimit)
         {
             _addInMachine += 1;
             if (_addInMachine == _fullLimit)
             {
+                isFull = true;
                 transform.gameObject.tag = "InvalidDrop";
             }
         }
@@ -37,10 +42,12 @@ public class LaundryMachine : MonoBehaviour
             transform.gameObject.tag = "ValidDrop";
         }
     }
+
     public void TagChanger()
     {
         _tagChanger = 1;
     }
+
     public void TimerAndSystem()
     {
         if (_tagChanger == 1)
@@ -52,4 +59,6 @@ public class LaundryMachine : MonoBehaviour
             }
         }
     }
+
+   
 }

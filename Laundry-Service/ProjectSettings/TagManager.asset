@@ -9,6 +9,7 @@ TagManager:
   - Draggabla
   - DirtyFolded
   - DirtyUnfolded
+  - DirtyUnfoldedInMachine
   layers:
   - Default
   - TransparentFX
