@@ -9,6 +9,10 @@ public class Basket : MonoBehaviour
     public static int _spawnCounter;
     public int _spawnLimit;
 
+    public Canvas canva;
+
+    public GameObject allClothes;
+
     // timer
     public float _timer;
     private float _timerEqual;
@@ -29,7 +33,10 @@ public class Basket : MonoBehaviour
         _timer -= Time.deltaTime;
         if (_timer <= 0 && _spawnCounter<_spawnLimit)
         {
+
+            // Ingame sahnesindeki clothes objesinin altýnda instantiate edilmesini saðlamamýz lazým
             Instantiate(clothe, spawnPoint, Quaternion.identity);
+            clothe.transform.parent = allClothes.transform;
             _timer = _timerEqual;
             _spawnCounter += 1;
         }
