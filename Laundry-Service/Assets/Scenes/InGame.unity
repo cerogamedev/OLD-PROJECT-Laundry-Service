@@ -288,9 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 716b33fdfa5c4754f99872ca0e590aee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothe: {fileID: 0}
+  clothe: {fileID: 1551244611873349548, guid: c845787f267ac9347b32e800fe453019, type: 3}
   _spawnLimit: 3
   canva: {fileID: 1690180977}
+  allClothes: {fileID: 1186128580}
   _timer: 2
 --- !u!1 &388296845
 GameObject:
@@ -780,7 +781,6 @@ GameObject:
   - component: {fileID: 1656086549}
   - component: {fileID: 1656086548}
   - component: {fileID: 1656086547}
-  - component: {fileID: 1656086546}
   m_Layer: 5
   m_Name: Rope
   m_TagString: Untagged
@@ -808,22 +808,6 @@ RectTransform:
   m_AnchoredPosition: {x: -6.15, y: 890}
   m_SizeDelta: {x: 12.3, y: 0.2}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1656086546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656086544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 716b33fdfa5c4754f99872ca0e590aee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clothe: {fileID: 0}
-  _spawnLimit: 3
-  canva: {fileID: 1690180977}
-  _timer: 2
 --- !u!50 &1656086547
 Rigidbody2D:
   serializedVersion: 4
