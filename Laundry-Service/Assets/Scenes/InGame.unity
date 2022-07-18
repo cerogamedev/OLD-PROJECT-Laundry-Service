@@ -291,7 +291,7 @@ MonoBehaviour:
   clothe: {fileID: 1551244611873349548, guid: c845787f267ac9347b32e800fe453019, type: 3}
   _spawnLimit: 3
   canva: {fileID: 1690180977}
-  allClothes: {fileID: 1186128580}
+  parentClothes: {fileID: 1186128580}
   _timer: 2
 --- !u!1 &388296845
 GameObject:

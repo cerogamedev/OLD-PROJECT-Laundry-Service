@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private RectTransform rectTransform;
+    public GameObject myCanvasAsGO;
     public Canvas myCanvas;
     private CanvasGroup canvasGroup;
     //control to which slot accept to cloth
@@ -17,13 +18,14 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     private void Start()
     {
+        myCanvasAsGO = GameObject.Find("InGame-Canva");
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-
+        myCanvas = myCanvasAsGO.GetComponent<Canvas>();
     }
     private void Update()
     {
-
+        
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
