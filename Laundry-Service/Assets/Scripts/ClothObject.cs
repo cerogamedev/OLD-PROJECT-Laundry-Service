@@ -8,6 +8,13 @@ public class ClothObject : MonoBehaviour
     public GameObject Rope;
     public GameObject Done_Basket;
 
+    public int id;
+
+    private void Start()
+    {
+        
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name == "Washer")
@@ -27,9 +34,13 @@ public class ClothObject : MonoBehaviour
   
             transform.localPosition = new Vector2(Done_Basket.transform.position.x, Done_Basket.transform.position.y);
             Money.earnMoney(5);
+            Destroy(this.gameObject);
 
         }
     }
-
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Basket._spawnCounter -= 1;
+    }
 
 }

@@ -65,8 +65,15 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         {
             id = 1;
         }
+        if (collision.name == "Washer")
+        {
+            id = 2;
+        }
+        if (collision.name == "Rope")
+        {
+            id = 3;
+        }
 
- 
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {

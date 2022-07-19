@@ -35,7 +35,6 @@ public class Basket : MonoBehaviour
         if (_timer <= 0 && _spawnCounter<_spawnLimit)
         {
 
-            // Ingame sahnesindeki clothes objesinin alt�nda instantiate edilmesini sa�lamam�z laz�m
             GameObject go = Instantiate(clothe, spawnPoint, Quaternion.identity) as GameObject;
             go.transform.SetParent(parentClothes.transform);
             go.transform.localScale = new Vector3(100, 100, 100);
