@@ -10,23 +10,35 @@ public class StartScene : MonoBehaviour
 {
     [SerializeField] Button StartButton;
     [SerializeField] GameObject ShopButton;
+    [SerializeField] Button soundControllerButton;
+    public AudioSource audioS;
+
+    
 
     void Start()
     {
-        
+        audioS = gameObject.GetComponent<AudioSource>();
+       
     }
-    void Update()
-    {
 
+    public void BGMusicController()
+    {
+        audioS.mute = !audioS.mute;
     }
 
     public void StartLoadScene()
     {
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("InGame");
     }
+
     public void ShopLoadScene()
     {
         SceneManager.LoadScene("Shop");
+
+    }
+
+    public void musicOnOff()
+    {
 
     }
 }
