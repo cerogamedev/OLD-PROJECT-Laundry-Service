@@ -37,7 +37,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (_setActiveCloth == 1)
         {
             rectTransform.anchoredPosition += eventData.delta / myCanvas.scaleFactor;
-
+            Debug.Log("Debugdaki " + rectTransform.position);
         }
 
     }
