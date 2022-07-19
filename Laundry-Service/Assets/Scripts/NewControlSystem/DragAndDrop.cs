@@ -37,7 +37,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (_setActiveCloth == 1)
         {
             rectTransform.anchoredPosition += eventData.delta / myCanvas.scaleFactor;
-            Debug.Log("Debugdaki " + rectTransform.position);
+       
         }
 
     }
@@ -65,12 +65,37 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         {
             id = 1;
         }
+
+ 
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.name == "Washer")
         {
             _setActiveCloth = 0;
+            StartCoroutine(wait(10f));
+
         }
+
+        if (collider.name == "Rope")
+        {
+            _setActiveCloth = 0;
+            StartCoroutine(wait(3f));
+
+        }
+
+        if (collider.name == "Done_Basket")
+        {
+            _setActiveCloth = 0;
+        }
+
     }
+
+    public IEnumerator wait(float time)
+    {
+        yield return new WaitForSeconds(time);
+        _setActiveCloth = 1;
+    }
+
+  
 }

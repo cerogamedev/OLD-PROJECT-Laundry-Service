@@ -5,6 +5,8 @@ using UnityEngine;
 public class ClothObject : MonoBehaviour
 {
     public GameObject Washer;
+    public GameObject Rope;
+    public GameObject Done_Basket;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,6 +14,20 @@ public class ClothObject : MonoBehaviour
         {
             transform.localPosition = new Vector2 (Washer.transform.position.x, Washer.transform.position.y);
            
+        }
+
+        else if (collision.gameObject.name == "Rope")
+        {
+            transform.localPosition = new Vector2(Rope.transform.position.x, Rope.transform.position.y);
+
+        }
+
+        else if (collision.gameObject.name == "Done_Basket")
+        {
+  
+            transform.localPosition = new Vector2(Done_Basket.transform.position.x, Done_Basket.transform.position.y);
+            Money.earnMoney(5);
+
         }
     }
 

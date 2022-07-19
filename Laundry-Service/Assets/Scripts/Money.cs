@@ -7,12 +7,16 @@ using TMPro;
 public class Money : MonoBehaviour
 {
 
-   [SerializeField] TextMeshProUGUI moneyText;
+    public TextMeshProUGUI moneyText;
     public static int currentMoney;
-   
-    void Start()
+
+    private void Start()
     {
         temp();
+    }
+
+    void Update()
+    {
         setMoneyText();
     }
 
@@ -31,7 +35,7 @@ public class Money : MonoBehaviour
         currentMoney = amount;
     }
 
-    public void earnMoney(int amount)
+    public static void earnMoney(int amount)
     {
         currentMoney = getMoney() + amount;
     }
@@ -41,9 +45,9 @@ public class Money : MonoBehaviour
         currentMoney = getMoney() - amount;
     }
 
-     public void setMoneyText()
-    {
-       moneyText.text = getMoney() + "coins";
-    }
+     private void setMoneyText()
+     {
+        moneyText.text = getMoney() + " coins";
+     }
   
 }
