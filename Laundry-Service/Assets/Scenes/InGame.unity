@@ -1006,6 +1006,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Done_Basket
       objectReference: {fileID: 0}
+    - target: {fileID: 1945096579842619372, guid: e3abd0345c17147ec8e1c367d0ace263, type: 3}
+      propertyPath: m_TagString
+      value: Done_Basket
+      objectReference: {fileID: 0}
     - target: {fileID: 2348394479432842662, guid: e3abd0345c17147ec8e1c367d0ace263, type: 3}
       propertyPath: id
       value: 3
@@ -1128,6 +1132,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Washer
       objectReference: {fileID: 0}
+    - target: {fileID: 2776019976316824452, guid: e131f87948423463383c75b678db9593, type: 3}
+      propertyPath: m_TagString
+      value: Washer
+      objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1158,11 +1166,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 3.6
+      value: 2.5999756
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 3.2
+      value: 3.1999512
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1194,11 +1202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1.8
+      value: 2.2999878
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 310.9
+      value: 310.90002
       objectReference: {fileID: 0}
     - target: {fileID: 2776019976316824455, guid: e131f87948423463383c75b678db9593, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1227,6 +1235,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
       propertyPath: m_Name
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+      propertyPath: m_TagString
       value: Rope
       objectReference: {fileID: 0}
     - target: {fileID: 7650082567293759021, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}

@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 1551244611873349461}
   - component: {fileID: 1551244611873349460}
   - component: {fileID: 1551244611873349467}
-  - component: {fileID: -7456080381122011782}
   m_Layer: 5
   m_Name: Clothe
   m_TagString: Untagged
@@ -59,6 +58,9 @@ MonoBehaviour:
   myCanvas: {fileID: 0}
   id: 0
   _setActiveCloth: 1
+  Washer: {fileID: 2776019976316824452, guid: e131f87948423463383c75b678db9593, type: 3}
+  Rope: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+  Done_Basket: {fileID: 1945096579842619372, guid: e3abd0345c17147ec8e1c367d0ace263, type: 3}
 --- !u!222 &1551244611873349463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -156,18 +158,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-7456080381122011782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551244611873349548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcb853605bea74793891a152f7fd48cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Washer: {fileID: 2776019976316824452, guid: e131f87948423463383c75b678db9593, type: 3}
-  Rope: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
-  Done_Basket: {fileID: 1945096579842619372, guid: e3abd0345c17147ec8e1c367d0ace263, type: 3}
