@@ -57,6 +57,7 @@ MonoBehaviour:
   myCanvasAsGO: {fileID: 0}
   myCanvas: {fileID: 0}
   id: 0
+  washImage: {fileID: 1551244611873349462}
   _setActiveCloth: 1
   Washer: {fileID: 2776019976316824452, guid: e131f87948423463383c75b678db9593, type: 3}
   Rope: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
@@ -82,14 +83,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 87def2ffecd760947a16d8f7dfb79f94, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
