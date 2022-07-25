@@ -16,7 +16,7 @@ public class Slot : MonoBehaviour, IDropHandler
             }
             else
             {
-                eventData.pointerDrag.GetComponent<DragAndDrop>().ResetPosition();
+                eventData.pointerDrag.GetComponent<DragAndDrop>().ResetPosition();                
             }
         }
     }

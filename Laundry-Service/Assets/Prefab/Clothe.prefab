@@ -54,9 +54,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 287bb732a2cd8ba4fabed38aa789e36a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myCanvasAsGO: {fileID: 0}
   myCanvas: {fileID: 0}
   id: 0
   _setActiveCloth: 1
+  Washer: {fileID: 2776019976316824452, guid: e131f87948423463383c75b678db9593, type: 3}
+  Rope: {fileID: 7650082567293759020, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+  Done_Basket: {fileID: 1945096579842619372, guid: e3abd0345c17147ec8e1c367d0ace263, type: 3}
 --- !u!222 &1551244611873349463
 CanvasRenderer:
   m_ObjectHideFlags: 0

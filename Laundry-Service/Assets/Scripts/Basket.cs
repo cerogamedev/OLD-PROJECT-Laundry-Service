@@ -11,7 +11,8 @@ public class Basket : MonoBehaviour
 
     public Canvas canva;
 
-    public GameObject allClothes;
+    public GameObject parentClothes; 
+
 
     // timer
     public float _timer;
@@ -34,13 +35,15 @@ public class Basket : MonoBehaviour
         if (_timer <= 0 && _spawnCounter<_spawnLimit)
         {
 
-            // Ingame sahnesindeki clothes objesinin altýnda instantiate edilmesini saðlamamýz lazým
-            Instantiate(clothe, spawnPoint, Quaternion.identity);
-            clothe.transform.parent = allClothes.transform;
+            GameObject go = Instantiate(clothe, spawnPoint, Quaternion.identity) as GameObject;
+            go.transform.SetParent(parentClothes.transform);
+            go.transform.localScale = new Vector3(100, 100, 100);
             _timer = _timerEqual;
             _spawnCounter += 1;
         }
     }
+  
+
 
 
 }
