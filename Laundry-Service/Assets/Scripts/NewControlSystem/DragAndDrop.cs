@@ -26,6 +26,9 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public static int countWasher = 0;
     public static int countRope = 0;
 
+    public static float washerTime;
+    public static float ropeTime;
+
     private Animator anim;
 
     private void Start()
@@ -63,7 +66,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         canvasGroup.blocksRaycasts = true;
         initPos = transform.position;
 
-
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -100,9 +102,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             transform.localPosition = new Vector2(Washer.transform.localPosition.x, Washer.transform.localPosition.y);
             _setActiveCloth = 0;
             washImage.enabled = false;
-            StartCoroutine(waitWM(3f));
+            StartCoroutine(waitWM(washerTime));
             countWasher++;
-            //washImage.enabled = true;
 
             if (countWasher == 3)
             {
@@ -114,23 +115,25 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
         if (collider.gameObject.name == "Rope" && id == 2)
         {
+
             if (countRope == 0)
-            {
-                transform.localPosition = new Vector2(Rope.transform.localPosition.x, Rope.transform.localPosition.y - 80);
-
-            }
-            else if (countRope == 1)
-            {
-                transform.localPosition = new Vector2(Rope.transform.localPosition.x + 200, Rope.transform.localPosition.y - 80);
-
-            }
-            else if (countRope == 2)
             {
                 transform.localPosition = new Vector2(Rope.transform.localPosition.x - 200, Rope.transform.localPosition.y - 80);
 
             }
+            else if (countRope == 1)
+            {
+                transform.localPosition = new Vector2(Rope.transform.localPosition.x , Rope.transform.localPosition.y - 80);
+
+            }
+            else if (countRope == 2)
+            {
+                transform.localPosition = new Vector2(Rope.transform.localPosition.x + 200, Rope.transform.localPosition.y - 80);
+
+            } 
+
             _setActiveCloth = 0;
-            StartCoroutine(wait(3f));
+            StartCoroutine(wait(ropeTime));
             countRope++;
 
             if (countRope == 3)
@@ -143,6 +146,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         {
             _setActiveCloth = 0;
             Money.earnMoney(5);
+            ShopSystem.SaveGame();
             Destroy(this.gameObject);
         }
 

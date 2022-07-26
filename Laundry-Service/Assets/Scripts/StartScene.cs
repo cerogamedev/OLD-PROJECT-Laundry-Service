@@ -18,7 +18,7 @@ public class StartScene : MonoBehaviour
     void Start()
     {
         audioS = gameObject.GetComponent<AudioSource>();
-       
+        ShopSystem.LoadGame();
     }
 
     public void BGMusicController()

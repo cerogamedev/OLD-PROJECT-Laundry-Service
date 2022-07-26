@@ -9,28 +9,19 @@ public class Money : MonoBehaviour
 
     public TextMeshProUGUI moneyText;
     public static int currentMoney;
-
-    private void Start()
-    {
-        temp();
-    }
-
+ 
     void Update()
     {
         setMoneyText();
     }
 
-    public void temp(){
-        currentMoney = 100;
-    }
- 
 
     public static int getMoney()
     {
         return currentMoney;
     }
 
-    public void setMoney(int amount)
+    public static void setMoney(int amount)
     {
         currentMoney = amount;
     }
@@ -40,7 +31,7 @@ public class Money : MonoBehaviour
         currentMoney = getMoney() + amount;
     }
 
-    public void spentMoney(int amount)
+    public static void spentMoney(int amount)
     {
         currentMoney = getMoney() - amount;
     }
