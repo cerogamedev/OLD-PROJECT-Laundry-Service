@@ -26,6 +26,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public static int countWasher = 0;
     public static int countRope = 0;
 
+    private Animator anim;
+
     private void Start()
     {
         myCanvasAsGO = GameObject.Find("InGame-Canva");
@@ -36,6 +38,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         Washer = GameObject.FindGameObjectWithTag("Washer");
         Rope = GameObject.FindGameObjectWithTag("Rope");
         Done_Basket = GameObject.FindGameObjectWithTag("Done_Basket");
+
+        anim = GetComponent<Animator>();
     }
 
  
@@ -106,6 +110,8 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             {
                 Debug.Log("Machine is full");
             }
+
+            anim.SetTrigger("Wet");
         }
 
         if (collider.gameObject.name == "Rope" && id == 2)
@@ -149,13 +155,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         yield return new WaitForSeconds(time);
         _setActiveCloth = 1;
         washImage.enabled = true;
-
     }
 
     public IEnumerator wait(float time)
     {
         yield return new WaitForSeconds(time);
         _setActiveCloth = 1;
+        anim.SetTrigger("Clean");
     }
 
 
