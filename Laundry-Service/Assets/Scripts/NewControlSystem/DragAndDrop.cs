@@ -85,9 +85,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         }
         if (collision.name == "Washer" && id == 1)
         {
-            id = 2;
-            countWasher--;
-    
+            id = 2;    
         }
         if (collision.name == "Rope" && id == 2)
         {
@@ -155,6 +153,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         yield return new WaitForSeconds(time);
         _setActiveCloth = 1;
         washImage.enabled = true;
+        countWasher--;
     }
 
     public IEnumerator wait(float time)
