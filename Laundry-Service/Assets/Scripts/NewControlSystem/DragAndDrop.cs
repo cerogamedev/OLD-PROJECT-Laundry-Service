@@ -24,7 +24,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public GameObject Done_Basket;
 
     public static int countWasher = 0;
-    public static int countRope = 0;
+    public static int ropeState = 0;
 
     public static float washerTime;
     public static float ropeTime;
@@ -92,12 +92,19 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (collision.name == "Rope" && id == 2)
         {
             id = 3;
-            countRope--;
+            //şunu nasıl ekleriz?
+            //eğer dokunulan cloth'un locationı Rope.transform.localPosition.x ise state'i 0 yap.
+            // eğer Rope.transform.localPosition.x + 200 ise staete'i 1 yap
+            // eğer Rope.transform.localPosition.x - 200 ise state'i 0 yap.
+            //buraya ekleyemiyoruz çünü on exit dediği için exit sırasında location x değişmiş oluyor
+            //on touch gibi bir şey lazım.
         }
     }
+
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.name == "Washer" && id == 1 && countWasher < 3)
+        if (collider.gameObject.name== "Washer" && id == 1 && countWasher < 3)
         {
             transform.localPosition = new Vector2(Washer.transform.localPosition.x, Washer.transform.localPosition.y);
             _setActiveCloth = 0;
@@ -116,30 +123,30 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
         if (collider.gameObject.name == "Rope" && id == 2)
         {
 
-            if (countRope == 0)
-            {
-                transform.localPosition = new Vector2(Rope.transform.localPosition.x - 200, Rope.transform.localPosition.y - 80);
-
-            }
-            else if (countRope == 1)
+            if (ropeState == 0) 
             {
                 transform.localPosition = new Vector2(Rope.transform.localPosition.x , Rope.transform.localPosition.y - 80);
+                ropeState = 1;
+                Debug.Log(ropeState);
 
             }
-            else if (countRope == 2)
+            else if (ropeState == 1)
             {
-                transform.localPosition = new Vector2(Rope.transform.localPosition.x + 200, Rope.transform.localPosition.y - 80);
+                transform.localPosition = new Vector2(Rope.transform.localPosition.x + 200 , Rope.transform.localPosition.y - 80);
+                ropeState = -1;
+                Debug.Log(ropeState);
 
-            } 
+            }
+            else if (ropeState == -1)
+            {
+                transform.localPosition = new Vector2(Rope.transform.localPosition.x - 200, Rope.transform.localPosition.y - 80);
+                ropeState = 0;
+                Debug.Log(ropeState);
+
+            }
 
             _setActiveCloth = 0;
             StartCoroutine(wait(ropeTime));
-            countRope++;
-
-            if (countRope == 3)
-            {
-                Debug.Log("Rope is full");
-            }
         }
 
         if (collider.gameObject.name == "Done_Basket" && id == 3)

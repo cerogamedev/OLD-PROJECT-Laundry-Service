@@ -12,8 +12,10 @@ public class StartScene : MonoBehaviour
     [SerializeField] GameObject ShopButton;
     [SerializeField] Button soundControllerButton;
     public AudioSource audioS;
+    [SerializeField] Text soundText;
 
-    
+
+
 
     void Start()
     {
@@ -24,6 +26,11 @@ public class StartScene : MonoBehaviour
     public void BGMusicController()
     {
         audioS.mute = !audioS.mute;
+        if (audioS.mute)
+        {
+            soundText.text = "Off";
+        }
+        else soundText.text = "On";
     }
 
     public void StartLoadScene()

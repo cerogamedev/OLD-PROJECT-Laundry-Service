@@ -156,6 +156,7 @@ MonoBehaviour:
   ShopButton: {fileID: 0}
   soundControllerButton: {fileID: 0}
   audioS: {fileID: 0}
+  soundText: {fileID: 0}
 --- !u!4 &114708095
 Transform:
   m_ObjectHideFlags: 0
@@ -1498,6 +1499,7 @@ MonoBehaviour:
   ShopButton: {fileID: 0}
   soundControllerButton: {fileID: 0}
   audioS: {fileID: 0}
+  soundText: {fileID: 0}
 --- !u!114 &1690180975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1836,6 +1838,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1690180978}
     m_Modifications:
+    - target: {fileID: 7650082567293759016, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+      propertyPath: m_Size.x
+      value: 2.0564644
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650082567293759016, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+      propertyPath: m_Size.y
+      value: 0.4805584
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650082567293759016, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.027683377
+      objectReference: {fileID: 0}
+    - target: {fileID: 7650082567293759016, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.77433205
+      objectReference: {fileID: 0}
     - target: {fileID: 7650082567293759017, guid: 2a522e96d31ee4d029fa97e9e3d47c70, type: 3}
       propertyPath: id
       value: 2
