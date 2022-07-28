@@ -38,7 +38,7 @@ public class Money : MonoBehaviour
 
      private void setMoneyText()
      {
-        moneyText.text = getMoney() + " coins";
+        moneyText.text = getMoney() + "";
      }
   
 }
